@@ -91,9 +91,9 @@ public abstract class BaseFragment extends Fragment {
     }
 
     private void initStatusWidgets() throws IllegalAccessException {
-        this.containerPage = this.viewRoot.findViewById(R.id.containerPage);
-        this.progressPage = this.viewRoot.findViewById(R.id.progressPage);
-        this.tvMessagePage = this.viewRoot.findViewById(R.id.tvMessagePage);
+        containerPage = (FrameLayout) viewRoot.findViewById(R.id.containerPage);
+        progressPage = (ProgressBar) viewRoot.findViewById(R.id.progressPage);
+        tvMessagePage = (TextView) viewRoot.findViewById(R.id.tvMessagePage);
         if (this.containerPage == null) {
             throw new IllegalAccessException("Can\'t find containerPage id");
         } else if (this.progressPage == null) {
