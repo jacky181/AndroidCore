@@ -1,4 +1,4 @@
-package jacky.vn.core;
+package jacky.vn.simple;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
