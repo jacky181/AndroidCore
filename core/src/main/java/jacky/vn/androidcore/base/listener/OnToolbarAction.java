@@ -24,4 +24,7 @@ public interface OnToolbarAction {
     void setRightToolbarButton(String var1, View.OnClickListener var2);
 
     void setRightIconButton(int var1, View.OnClickListener var2);
+
+    void setupSearchView(int hintIcon);
+
 }

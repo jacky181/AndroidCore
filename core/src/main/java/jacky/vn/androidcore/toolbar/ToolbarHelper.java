@@ -9,6 +9,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,7 +25,7 @@ public class ToolbarHelper implements OnToolbarAction {
 
     protected Toolbar toolbar;
     protected ImageView leftBtn;
-    protected TextView tvTitle;
+    protected EditText edTitle;
     protected TextView rightBtn;
     protected Context context;
 
@@ -38,8 +39,8 @@ public class ToolbarHelper implements OnToolbarAction {
         } else if(this.leftBtn == null) {
             throw new IllegalAccessException("Can\'t find this Left button");
         } else {
-            this.tvTitle = (TextView)toolbar.findViewById(id.tvTitleToolbar);
-            if(this.tvTitle == null) {
+            this.edTitle = (EditText) toolbar.findViewById(id.tvTitleToolbar);
+            if(this.edTitle == null) {
                 throw new IllegalAccessException("Can\'t find this Title TextView");
             }
         }
@@ -54,16 +55,16 @@ public class ToolbarHelper implements OnToolbarAction {
 
     @Override
     public void setTitle(@NonNull String title1, String font) {
-        this.tvTitle.setText(title1);
+        this.edTitle.setText(title1);
         if (!TextUtils.isEmpty(font)){
-            this.tvTitle.setTypeface(Typeface.createFromAsset(this.tvTitle.getContext().getAssets(),font));
+            this.edTitle.setTypeface(Typeface.createFromAsset(this.edTitle.getContext().getAssets(),font));
         }
     }
 
     @Override
     public void setTitleToolbarColor(int var1) {
         if (this.toolbar !=null){
-            this.tvTitle.setTextColor(var1);
+            this.edTitle.setTextColor(var1);
         }
     }
 
@@ -138,6 +139,17 @@ public class ToolbarHelper implements OnToolbarAction {
                     this.rightBtn.setCompoundDrawablesRelativeWithIntrinsicBounds(null,null,drawable,null);
                 }
                 this.setupOnClickListener(onClickListener);
+            }
+        }
+    }
+
+    @Override
+    public void setupSearchView(int hintIcon) {
+
+        if (hintIcon>0){
+            Drawable drawable = ContextCompat.getDrawable(this.context, hintIcon);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                this.edTitle.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
             }
         }
     }
