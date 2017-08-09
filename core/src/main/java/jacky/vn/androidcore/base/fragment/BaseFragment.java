@@ -65,7 +65,7 @@ public abstract class BaseFragment extends Fragment {
         return this.viewRoot;
     }
 
-    protected abstract void preInitLayout();
+    public abstract void preInitLayout();
 
     public void showProgressPage(boolean isShow) {
         if (isShow) {
@@ -105,10 +105,10 @@ public abstract class BaseFragment extends Fragment {
         }
     }
 
-    protected abstract int getLayoutId();
+    public abstract int getLayoutId();
 
 
-    protected int getStatusPageView() {
+    public int getStatusPageView() {
         return 0;
     }
 
@@ -118,7 +118,7 @@ public abstract class BaseFragment extends Fragment {
         this.bindMenu();
     }
 
-    private void bindMenu() {
+    public void bindMenu() {
 
     }
 

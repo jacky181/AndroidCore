@@ -3,6 +3,7 @@ package jacky.vn.androidcore.toolbar;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
@@ -133,7 +134,9 @@ public class ToolbarHelper implements OnToolbarAction {
             }else {
                 this.rightBtn.setVisibility(View.VISIBLE);
                 Drawable drawable = ContextCompat.getDrawable(this.context, iconRes);
-                this.rightBtn.setCompoundDrawablesRelativeWithIntrinsicBounds(null,null,drawable,null);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                    this.rightBtn.setCompoundDrawablesRelativeWithIntrinsicBounds(null,null,drawable,null);
+                }
                 this.setupOnClickListener(onClickListener);
             }
         }

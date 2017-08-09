@@ -29,9 +29,9 @@ public abstract class BaseActivity extends AppCompatActivity implements OnBaseTo
         this.setUpViewAndData();
     }
 
-    protected abstract int getLayoutId();
+    public abstract int getLayoutId();
 
-    protected abstract void setUpViewAndData();
+    public abstract void setUpViewAndData();
 
     public void bindView() {
         this.unbinder = ButterKnife.bind(this);
