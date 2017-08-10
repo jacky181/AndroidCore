@@ -3,6 +3,7 @@ package jacky.vn.androidcore.widget.textview;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v7.widget.AppCompatEditText;
+import android.support.v7.widget.AppCompatTextView;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -21,7 +22,7 @@ import jacky.vn.androidcore.utils.WidgetUtils;
  * Created by Jacky Hua on 10/08/2017.
  */
 
-public abstract class JTextView extends AppCompatEditText {
+public abstract class JTextView extends AppCompatTextView {
 
     private List<String> fontArrays;
 

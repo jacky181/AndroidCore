@@ -2,6 +2,7 @@ package jacky.vn.androidcore.widget.button;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatEditText;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -21,7 +22,7 @@ import jacky.vn.androidcore.utils.WidgetUtils;
  * Created by Jacky Hua on 10/08/2017.
  */
 
-public abstract class JButton extends AppCompatEditText {
+public abstract class JButton extends AppCompatButton {
 
     private List<String> fontArrays;
 
