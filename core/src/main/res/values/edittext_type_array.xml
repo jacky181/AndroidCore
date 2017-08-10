@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="JEditText">
+        <attr name="etv_font" format="enum">
+            <enum name="light" value="0" />
+            <enum name="regular" value="1" />
+            <enum name="medium" value="2" />
+            <enum name="italic" value="3" />
+        </attr>
+        <attr name="enableChangeSize" format="boolean"/>
+
+    </declare-styleable>
+</resources>
